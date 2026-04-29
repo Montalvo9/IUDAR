@@ -2,6 +2,16 @@
 
 /**La session siempre va en la linea 1 */
 session_start();
+/**Evita cache */
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
+/* Si ya inició sesión, lo manda al dashboard */
+if (isset($_SESSION['usuario'])) {
+    header("Location: ./vistas/dashboard.php");
+    exit();
+}
 require_once './models/DBLogin.php';
 require_once './librerias/libreriasGenerales.php';
 
@@ -29,6 +39,7 @@ if (isset($_POST['ingresar'])) {
     $usuarioData = $modelo->validarLogin($usuario_input, $password_input);
 
     if ($usuarioData !== false) {
+          session_regenerate_id(true);
         //guardamos los datos de la sesion 
         $_SESSION['id_usuario'] = $usuarioData['id_usuario'];
         $_SESSION['usuario'] = $usuarioData['usuario'];

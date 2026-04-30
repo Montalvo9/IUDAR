@@ -14,7 +14,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="/ROSARIO/vistas/dashboard.php">
             <i class="bi bi-speedometer" style="font-size: 25px;"></i>
             <span>Dashboard</span></a>
     </li>
@@ -120,7 +120,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item active">
-        <a class="nav-link" href="../logout.php">
+        <a class="nav-link" href="/ROSARIO/logout.php">
             <i class="bi bi-box-arrow-left" style="font-size: 25px;"></i>
             <span>Salir</span></a>
     </li>

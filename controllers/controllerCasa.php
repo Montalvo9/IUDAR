@@ -32,4 +32,11 @@ switch ($opcion) {
        echo json_encode(["data" => $lista]);
         exit;
         break;
+
+    case 'obtener-preferencias': 
+        $datos = $db->obtenerPreferencia();
+        echo json_encode($datos);
+        break;
+    default:
+    echo json_encode(["data" =>[]]);
 }

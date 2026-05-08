@@ -43,3 +43,23 @@ tabalaControlCasas = $("#tablaCasas").DataTable({
     ]
 
 });
+
+/**Funcion que carga los datos de preferencia en el select de (preferencias) */
+function cargarPreferencias() {
+    $.post('/ROSARIO/controllers/controllerCasa.php', { opcion: 'obtener-preferencias' },
+        function(response) {
+            console.log("Que tiene este response:", response);
+            let select = $('#id_preferencia');
+            select.find('option:not(:first)').remove(); // elimina todas las opciones excepto la primera
+            response.forEach(t => {
+                select.append(`<option value="${t.id_preferencia}">${t.nombre}</option>`)
+            });
+
+        },
+        'json'
+
+    );
+}
+$(document).ready(function() {
+    cargarPreferencias();
+});

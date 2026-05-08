@@ -87,9 +87,8 @@
                                     <label class="small font-weight-bold">Preferencia</label>
                                     <!-- Este select idealmente se llena desde la BD (tabla preferencias) -->
                                     <select class="form-control" name="id_preferencia" id="id_preferencia">
-                                        <option value="">Seleccione una opción...</option>
-                                        <option value="1">Preferencia 1</option>
-                                        <option value="2">Preferencia 2</option>
+                                        <option value="">Preferencias</option>
+                                    
                                     </select>
                                 </div>
                             </div>

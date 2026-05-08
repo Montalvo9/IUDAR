@@ -37,4 +37,20 @@ class modeloCasa
         $resultado = $this->modelo = $query->fetchAll(PDO::FETCH_ASSOC);
         return $resultado;
     }
+
+    /**Consultamos el listado de la tabla preferencia para guardarlos en la bd y con esos
+     * datos llenar el select 
+     */
+
+    public function obtenerPreferencia(){
+        try{
+            $query = $this->db->prepare("SELECT id_preferencia, nombre FROM preferencias"); 
+            $query->execute();
+            $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+
+        }catch(PDOException $error){
+            return false;
+        }
+    }
 }

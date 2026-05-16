@@ -53,4 +53,56 @@ class modeloCasa
             return false;
         }
     }
+
+    /**Funcion insertar casa*/
+   public function insertarCasa($nombre, $propietario, $telefono, $ubicacion, $capacidad, $colchonetas, $preferencia, $transporte, $observaciones){
+
+    try{
+
+        $query = $this->db->prepare("
+            INSERT INTO casas 
+            (
+                nombre_casa,
+                propietario,
+                telefono,
+                ubicacion,
+                capacidad,
+                colchonetas,
+                id_preferencia,
+                transporte,
+                observaciones
+            )
+            VALUES
+            (
+                :nombre_casa,
+                :propietario,
+                :telefono,
+                :ubicacion,
+                :capacidad,
+                :colchonetas,
+                :id_preferencia,
+                :transporte,
+                :observaciones
+            )
+        ");
+
+        $query->execute([
+            ':nombre_casa'   => $nombre,
+            ':propietario'   => $propietario,
+            ':telefono'      => $telefono,
+            ':ubicacion'     => $ubicacion,
+            ':capacidad'     => $capacidad,
+            ':colchonetas'   => $colchonetas,
+            ':id_preferencia'=> $preferencia,
+            ':transporte'    => $transporte,
+            ':observaciones' => $observaciones
+        ]);
+
+        return true;
+
+    }catch(PDOException $error){
+           echo $error->getMessage(); //para depurar si algo sale mal y observar el error
+        return false;
+    }
+}
 }

@@ -65,6 +65,12 @@ $(document).ready(function() {
 });
 
 
+/**FUNCION limpiarForm para limpiar el formulario con el boton de Limpiar */
+
+function limpiarForm() {
+    document.getElementById('frmRegistrarCasa').reset();
+}
+
 /**Funcion de registrar casa */
 
 function registrarCasa() {

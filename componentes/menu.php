@@ -47,7 +47,7 @@
 
     <!-- Huespedes -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="/ROSARIO/vistas/huespedes/huespedes.php">
             <span>
                 <i class="bi bi-person" style="font-size: 22px; margin-right: 5px;"></i>
                 <i class="fas fa-bed" style="font-size: 22px;"></i>

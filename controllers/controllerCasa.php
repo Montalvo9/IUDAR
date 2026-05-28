@@ -8,6 +8,7 @@ $opcion = $_POST['opcion'] ?? '';
 switch ($opcion) {
     case 'lista-casas':
         $datos = $db->consulta();
+        
         $lista = [];
 
         foreach ($datos as $value) {
@@ -25,7 +26,7 @@ switch ($opcion) {
                 "accion" => "<div class='d-flex gap-1 justify-content-center'>
                              <button class='btn btn-sm btn-outline-primary' onclick='obtenerDatos({$value['id_casa']})'title='Editar'> <i class='fas fa-edit'></i> </button>
 
-                            <button class='btn btn-sm btn-outline-danger' onclick='eliminarProducto({$value['id_casa']})'  title='Eliminar'> <i class='fas fa-trash'></i> </button>
+                            <button class='btn btn-sm btn-outline-danger' onclick='eliminarCasa({$value['id_casa']})'  title='Eliminar'> <i class='fas fa-trash'></i> </button>
                              </div>"
             ];
         }
